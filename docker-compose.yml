@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: hidro_db
+    environment:
+      POSTGRES_USER: hidro
+      POSTGRES_PASSWORD: hidro1234
+      POSTGRES_DB: hidroelectrica
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: hidro_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: hidro1234
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
