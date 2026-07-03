@@ -4,7 +4,8 @@ import json
 import hmac
 import hashlib
 import psycopg2
-from datetime import datetime, timezone
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import SERVER_HOST, SERVER_PORT, HMAC_KEY, UMBRALES, NODOS_VALIDOS
 
 #  Conexión a la base de datos 
@@ -65,9 +66,9 @@ def evaluar_umbral(nodo: str, variable: str, valor: float, db) -> dict:
 #  Lógica de actuación 
 def resolver_comando(nodo: str, variable: str, valor: float, rango: dict):
     if variable == "nivel":
-        if valor > rango["max"]:
-            return "cerrar_compuerta", 0.0
         if valor < rango["min"]:
+            return "cerrar_compuerta", 0.0
+        if valor > rango["max"]:
             return "abrir_compuerta", 100.0
 
     if variable == "caudal":
