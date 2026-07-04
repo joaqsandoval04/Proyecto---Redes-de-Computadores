@@ -21,6 +21,11 @@ services:
       GF_SECURITY_ADMIN_PASSWORD: hidro1234
     depends_on:
       - postgres
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
 
 volumes:
   postgres_data:
+  grafana_data:
