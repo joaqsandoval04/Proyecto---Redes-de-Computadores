@@ -10,3 +10,4 @@ datasources:
       password: hidro1234
     jsonData:
       sslmode: disable
+      defaultDatabase: hidroelectrica

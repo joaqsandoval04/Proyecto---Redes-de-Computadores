@@ -7,11 +7,11 @@ HMAC_KEY = b"clave_secreta_hidro_2026"
 
 # Umbrales operacionales
 UMBRALES = {
-    "nivel":       {"min": 30.0,    "max": 85.0,    "unidad": "m"},
-    "caudal":      {"min": 15.0,    "max": 130.0,   "unidad": "m3/s"},
-    "rpm":         {"min": 200.0,   "max": 600.0,   "unidad": "RPM"},
-    "temperatura": {"min": 10.0,    "max": 80.0,    "unidad": "C"},
-    "voltaje":     {"min": 10000.0, "max": 14000.0, "unidad": "V"},
+    "nivel":       {"min": 10.0,    "max": 95.0,    "unidad": "m"},
+    "caudal":      {"min": 0.0,    "max": 160.0,   "unidad": "m3/s"},
+    "rpm":         {"min": 0.0,   "max": 700.0,   "unidad": "RPM"},
+    "temperatura": {"min": 5.0,    "max": 100.0,    "unidad": "C"},
+    "voltaje":     {"min": 8000.0, "max": 16000.0, "unidad": "V"},
 }
 
 # Nodos reconocidos
