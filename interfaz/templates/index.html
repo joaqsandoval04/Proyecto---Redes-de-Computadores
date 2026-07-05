@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Central hidroelectrica</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Central hidroelectrica</h1>
+      </div>
+      <span id="estado" class="estado espera">Conectando</span>
+    </header>
+
+    <section id="tarjetas" class="tarjetas"></section>
+
+    <section class="panel">
+      <h2>Alertas recientes</h2>
+      <div id="alertas"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
