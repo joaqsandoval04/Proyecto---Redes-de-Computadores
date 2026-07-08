@@ -130,6 +130,15 @@ python nodo_generador.py
 ```
 ---
 
+### 7. Abrir interfas grafica
+
+Desde la carpeta `interfaz/`:
+
+```bash
+python app.py   
+```
+---
+
 ## Protocolo de mensajes
 
 Cada nodo envía un mensaje JSON por línea (`\n` como delimitador):
